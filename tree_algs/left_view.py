@@ -1,14 +1,8 @@
 from stack_algs.queue import Queue
+from tree_algs.node import Node
 
 
-class Node:
-    def __init__(self, val):
-        self.right = None
-        self.data = val
-        self.left = None
-
-
-def print_left_view(root):
+def print_left_view(root: Node):
     if root is None:
         return
 
@@ -17,7 +11,7 @@ def print_left_view(root):
     q.enqueue(None)
     print(root.data, end=' ')
     while not q.isEmpty():
-        current = q.dequeue()  # type: Node
+        current = q.dequeue()
         if current is not None:
             if current.left is not None:
                 q.enqueue(current.left)
